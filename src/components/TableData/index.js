@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 
 function TableData(props) {
-  return <table className="table-data">{props.children}</table>;
+  return <td className="table-data">{props.children}</td>;
 }
 
 export default TableData;
