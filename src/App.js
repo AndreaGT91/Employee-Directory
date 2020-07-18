@@ -10,13 +10,19 @@ import TableHeader from "./components/TableHeader";
 import TableRow from "./components/TableRow";
 import THead from './components/THead';
 import TBody from './components/TBody';
-
+// import Form from './components/Form';
+// import Label from './components/Label';
+// import Select from './components/Select';
+// import Option from './components/Option';
 
 function App() {
   // Dummy state, used to force re-render
   const [updateView, setUpdateView] = useState(0);
+  // Which filter is selected
+  const [filterSelect, setFilterSelect] = useState("no filter");
 
-  // const empList = employees;
+  // Make copy of original data so that we can reset filter
+  let empList = employees;
 
   function handleColClick(event) {
     const colName = event.target.dataset.text;
@@ -35,33 +41,41 @@ function App() {
 
     switch (colName) {
       case "ID": 
-        employees.sort((a,b) => {return compareEmps(a.id, b.id)});
+        empList.sort((a,b) => {return compareEmps(a.id, b.id)});
         break;
       case "First Name": 
-        employees.sort((a,b) => {return compareEmps(a.firstname, b.firstname)});
+        empList.sort((a,b) => {return compareEmps(a.firstname, b.firstname)});
         break;
       case "Last Name": 
-        employees.sort((a,b) => {return compareEmps(a.lastname, b.lastname)});
+        empList.sort((a,b) => {return compareEmps(a.lastname, b.lastname)});
         break;
       case "Title": 
-        employees.sort((a,b) => {return compareEmps(a.title, b.title)});
+        empList.sort((a,b) => {return compareEmps(a.title, b.title)});
         break;
       case "Department": 
-        employees.sort((a,b) => {return compareEmps(a.department, b.department)});
+        empList.sort((a,b) => {return compareEmps(a.department, b.department)});
         break;
       case "Office Number": 
-        employees.sort((a,b) => {return compareEmps(a.officenum, b.officenum)});
+        empList.sort((a,b) => {return compareEmps(a.officenum, b.officenum)});
         break;
       case "Extension": 
-        employees.sort((a,b) => {return compareEmps(a.extension, b.extension)});
+        empList.sort((a,b) => {return compareEmps(a.extension, b.extension)});
         break;
       case "Email": 
-        employees.sort((a,b) => {return compareEmps(a.email, b.email)});
+        empList.sort((a,b) => {return compareEmps(a.email, b.email)});
         break;
       default:
-        employees.sort((a,b) => {return compareEmps(a.id, b.id)});
+        empList.sort((a,b) => {return compareEmps(a.id, b.id)});
     };
     // Force the DOM to re-render by changing state
+    setUpdateView((updateView) => ++updateView);
+  };
+
+  function handleFilterChange(event) {
+    const filter = event.target.value;
+    setFilterSelect(filter);
+
+    empList = empList.filter(emp => emp.department === filter);
     setUpdateView((updateView) => ++updateView);
   };
 
@@ -84,7 +98,7 @@ function App() {
           </TableRow>
         </THead>
         <TBody>
-          {employees.map(employee => (
+          {empList.map(employee => (
             <TableRow key={employee.id.toString()}>
               <TableData>{employee.id}</TableData>
               <TableData>{employee.firstname}</TableData>
@@ -98,6 +112,16 @@ function App() {
           ))}
         </TBody>
       </Table>
+      <form>
+        <label>
+          Filter by Department:
+          <select value={filterSelect} onChange={handleFilterChange}>
+            <option value="no filter">no filter</option>
+            <option value="Development">Development</option>
+            <option value="Sales">Sales</option>
+          </select>
+        </label>
+      </form>
     </Wrapper>
   );
 }

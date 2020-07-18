@@ -1,3 +1,11 @@
 .table-row {
   vertical-align: center;
 }
+
+.table-row:nth-child(even) {
+  background-color: lightgray;
+}
+
+.table-row:nth-child(odd) {
+  background-color: white;
+}
