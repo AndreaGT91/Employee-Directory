@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Employee-Directory
+React application for displaying a list of employees. List can be sorted by any property and filtered by department.
 
-## Available Scripts
+## GitHub Repository
+[github.com/AndreaGT91/Employee-Directory](https://github.com/AndreaGT91/Employee-Directory)
 
-In the project directory, you can run:
+## Heroku Deployment
+[fierce-chamber-01229.herokuapp.com/](https://fierce-chamber-01229.herokuapp.com/)
 
-### `npm start`
+## Installation 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage 
+ `npm start`   
+ [localhost:3000/](http://localhost:3000/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Questions 
+ ![Andrea Bentley](https://avatars2.githubusercontent.com/u/58275699?v=4&s=48)  Andrea Bentley  (AndreaGT91)     
+[andrea@bentleytech.com](mailto:andrea@bentleytech.com)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Assignment:
+# Unit 19 React Homework: Employee Directory
 
-### `npm run build`
+## Overview
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## User Story
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
 
-### `npm run eject`
+## Business Context
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Acceptance Criteria
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Given a table of random users, when the user loads the page, a table of employees should render. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The user should be able to:
 
-## Learn More
+  * Sort the table by at least one category
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  * Filter the users by at least one property.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Commit Early and Often
 
-### Code Splitting
+One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
 
-### Analyzing the Bundle Size
+2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Follow these guidelines for committing:
 
-### Making a Progressive Web App
+* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
 
-### Advanced Configuration
+* Don't commit half done work, for the sake of your collaborators (and your future self!)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* Test your application before you commit to ensure functionality at every step in the development process
 
-### Deployment
+We would like you to have well over 200 commits by graduation, so commit early and often!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+## Submission on BCS
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+You are required to submit the following:
+
+* the URL to the deployed application
+
+* the URL to the Github repository
+
