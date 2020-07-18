@@ -26,6 +26,18 @@ function App() {
   // Make copy of original data so that we can reset filter
   const [empList, setEmpList] = useState(employees);
 
+  // Initialize the Departments list for the filter dropdown
+  let departments = [];
+
+  employees.forEach(item => {
+    if (departments.indexOf(item.department) === -1) {
+      departments.push(item.department);
+    };
+  });
+
+  departments.sort();
+
+  // Event handle for clicking on table's column headers, which will sort by that property
   function handleColClick(event) {
     const colName = event.target.dataset.text;
     const emps = empList;
@@ -74,10 +86,11 @@ function App() {
     setUpdateView(updateView + 1);
   };
 
+  // Event handler for a change in the department dropdown selection, which filters by that department
   function handleFilterChange(event) {
     const filter = event.target.value;
     setFilterSelect(filter);
-    
+
     if (filter === noFilter) {
       setEmpList(employees);
     }
@@ -123,9 +136,10 @@ function App() {
         <label>
           Filter by Department:
           <select value={filterSelect} onChange={handleFilterChange}>
-            <option value="no filter">no filter</option>
-            <option value="Development">Development</option>
-            <option value="Sales">Sales</option>
+            <option key={0} value="no filter">no filter</option>
+            {departments.map((dept, index)  => (
+              <option key={index+1} value={dept}>{dept}</option>
+            ))}
           </select>
         </label>
       </form>
