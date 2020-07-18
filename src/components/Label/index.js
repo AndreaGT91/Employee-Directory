@@ -3,7 +3,7 @@ import "./style.css";
 
 function Label(props) {
   return (
-    <label htmlFor={props.children} className="label">{props.children}</label>
+    <label htmlFor={props.htmlFor} className="label">{props.children}</label>
   );
 }
 

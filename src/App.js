@@ -10,17 +10,18 @@ import TableHeader from "./components/TableHeader";
 import TableRow from "./components/TableRow";
 import THead from './components/THead';
 import TBody from './components/TBody';
-// import Form from './components/Form';
-// import Label from './components/Label';
-// import Select from './components/Select';
-// import Option from './components/Option';
+import Form from './components/Form';
+import Label from './components/Label';
+import Select from './components/Select';
+import Option from './components/Option';
 
 function App() {
   // Dummy state, used to force re-render
   const [updateView, setUpdateView] = useState(0);
 
   // Which filter is selected
-  const noFilter = "no filter";
+  const filterElements = "filterElements";
+  const noFilter = "No filter";
   const [filterSelect, setFilterSelect] = useState(noFilter);
 
   // Make copy of original data so that we can reset filter
@@ -132,17 +133,17 @@ function App() {
           ))}
         </TBody>
       </Table>
-      <form>
-        <label>
+      <Form>
+        <Label htmlFor={filterElements}>
           Filter by Department:
-          <select value={filterSelect} onChange={handleFilterChange}>
-            <option key={0} value="no filter">no filter</option>
+          <Select name={filterElements} value={filterSelect} onChange={handleFilterChange}>
+            <Option key={0} value={noFilter}>{noFilter}</Option>
             {departments.map((dept, index)  => (
-              <option key={index+1} value={dept}>{dept}</option>
+              <Option key={index+1} value={dept}>{dept}</Option>
             ))}
-          </select>
-        </label>
-      </form>
+          </Select>
+        </Label>
+      </Form>
     </Wrapper>
   );
 }
